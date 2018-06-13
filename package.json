@@ -1,0 +1,36 @@
+{
+  "name": "mixel",
+  "version": "1.0.0",
+  "description": "A rewrite of pixel-sprite-generator in Typescript.",
+  "main": "./dist/index.js",
+  "typings": "./dist/src/index.d.ts",
+  "scripts": {
+    "prepare": "npm run build",
+    "build": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seiyria/mixel.git"
+  },
+  "keywords": [
+    "pixel-sprite-generator",
+    "pixel",
+    "sprite",
+    "generator"
+  ],
+  "author": "Kyle Kemp <kyle@seiyria.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/seiyria/mixel/issues"
+  },
+  "homepage": "https://github.com/seiyria/mixel#readme",
+  "dependencies": {
+    "lodash.merge": "^4.6.1",
+    "seedrandom": "^2.4.3"
+  },
+  "devDependencies": {
+    "awesome-typescript-loader": "^3.4.1",
+    "typescript": "^2.9.2",
+    "webpack": "^3.11.0"
+  }
+}

@@ -1,0 +1,8 @@
+.npmignore
+.gitignore
+.editorconfig
+.idea
+.vscode
+*.spec*
+webpack.config.js
+tsconfig.json
