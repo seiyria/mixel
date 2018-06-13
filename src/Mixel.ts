@@ -31,7 +31,7 @@ export interface SpriteOptions {
   brightnessNoise?: number;     // default: 0.3, values: (0, 1), higher numbers make the brighness more "fuzzy" near the edges
   saturation?: number;          // default: 0.5, values: (0, 1), higher numbers make the general saturation of the image more colorful
   seed?: string;                // default: none,                seed the rng generating this image to make it more deterministic
-  tint?: { r: number, b: number, g: number };
+  tint?: { r: number, b: number, g: number, a: number };
   randomSampleCallback?: (x: number, y: number) => SpriteStructure
 }
 
@@ -220,9 +220,9 @@ export class Sprite {
           index = (v * ulen + u) * 4;
         }
 
-        const rgb = { r: 1, g: 1, b: 1 };
+        const rgb = { r: 1, g: 1, b: 1, a: 1 };
 
-        let tintMask = { r: 1, g: 1, b: 1 };
+        let tintMask = { r: 1, g: 1, b: 1, a: 1 };
         if(this.spriteOpts.tint) tintMask = this.spriteOpts.tint;
 
         if(val !== SpriteStructure.Empty) {
@@ -253,17 +253,20 @@ export class Sprite {
             }
           }
 
+        } else {
+          rgb.a = 0;
         }
 
         this.imageData[index + 0] = rgb.r * 255;
         this.imageData[index + 1] = rgb.g * 255;
         this.imageData[index + 2] = rgb.b * 255;
-        this.imageData[index + 3] = 255;
+        this.imageData[index + 3] = rgb.a * 255;
 
         if(val !== SpriteStructure.Empty) {
           this.imageData[index + 0] *= tintMask.r;
           this.imageData[index + 1] *= tintMask.g;
           this.imageData[index + 2] *= tintMask.b;
+          this.imageData[index + 3] *= tintMask.a;
         }
       }
     }

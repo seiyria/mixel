@@ -75,7 +75,7 @@ Name | Type | Default | Description
 `brightnessNoise` | number (0, 1) | 0.3 | Higher numbers make the brightness more "fuzzy" near the edge.
 `saturation` | number (0, 1) | 0.5 | Higher numbers make the general saturation of the image appear more colorful.
 `seed` | string | none | The seed to use for random generation. Using the same seed/mask will result in the same image every time.
-`tint` | `{ r: number, g: number, b: number }` | none | The tint to apply to the image when it's been generated.
+`tint` | `{ r: number, g: number, b: number, a: number }` | none | The tint to apply to the image when it's been generated.
 `randomSampleCallback` | `(x: number, y: number) => SpriteStructure` | Randomly change 1/2 to -1/0 | The callback to be applied to each individual cell of the sprite.
 
 ### More Usage
