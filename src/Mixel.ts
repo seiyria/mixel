@@ -1,6 +1,5 @@
 
 import SeedRandom from 'seedrandom';
-import merge from 'lodash.merge';
 
 export enum SpriteStructure {
   
@@ -100,7 +99,9 @@ export class Sprite {
     if(this.width % 2 && this.mask.mirrorX) console.warn(`Sprite Warning: Width is not evenly divisible by 2, mirroring X will look odd.`);
     if(this.height % 2 && this.mask.mirrorY) console.warn(`Sprite Warning: Height is not evenly divisible by 2, mirroring Y will look odd.`);
 
-    this.spriteOpts = merge({}, defaults, opts);
+    this.spriteOpts = {};
+    Object.keys(defaults).forEach(key => this.spriteOpts[key] = defaults[key]);
+    Object.keys(opts).forEach(key => this.spriteOpts[key] = opts[key]);
 
     this.rng = SeedRandom(this.spriteOpts.seed);
 

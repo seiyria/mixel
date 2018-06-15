@@ -25,7 +25,6 @@
   },
   "homepage": "https://github.com/seiyria/mixel#readme",
   "dependencies": {
-    "lodash.merge": "^4.6.1",
     "seedrandom": "^2.4.3"
   },
   "devDependencies": {
