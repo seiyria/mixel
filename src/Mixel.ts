@@ -1,5 +1,5 @@
 
-import SeedRandom from 'seedrandom';
+import { xor4096 as SeedRandom } from 'seedrandom';
 
 export enum SpriteStructure {
   
