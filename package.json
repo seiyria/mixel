@@ -1,6 +1,6 @@
 {
   "name": "mixel",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A rewrite of pixel-sprite-generator in Typescript.",
   "main": "./dist/index.js",
   "typings": "./dist/src/index.d.ts",
