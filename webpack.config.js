@@ -10,7 +10,7 @@ module.exports = {
     output: {
       path: require('path').resolve(__dirname, 'dist'),
       filename: 'index.js',
-      library: 'censor-sensor',
+      library: 'mixel',
       libraryTarget: 'umd'
     },
   
